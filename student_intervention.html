@@ -11805,7 +11805,7 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11820,6 +11820,20 @@ No (or) 0, for students who do not need early intervention.</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Student data read successfully!
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11843,7 +11857,7 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -11877,6 +11891,24 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total number of students: 395
+Number of features: 30
+Number of students who passed: 265
+Number of students who failed: 130
+Graduation rate of the class: 67.09%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11892,7 +11924,7 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -11918,6 +11950,47 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Feature columns:
+[&#39;school&#39;, &#39;sex&#39;, &#39;age&#39;, &#39;address&#39;, &#39;famsize&#39;, &#39;Pstatus&#39;, &#39;Medu&#39;, &#39;Fedu&#39;, &#39;Mjob&#39;, &#39;Fjob&#39;, &#39;reason&#39;, &#39;guardian&#39;, &#39;traveltime&#39;, &#39;studytime&#39;, &#39;failures&#39;, &#39;schoolsup&#39;, &#39;famsup&#39;, &#39;paid&#39;, &#39;activities&#39;, &#39;nursery&#39;, &#39;higher&#39;, &#39;internet&#39;, &#39;romantic&#39;, &#39;famrel&#39;, &#39;freetime&#39;, &#39;goout&#39;, &#39;Dalc&#39;, &#39;Walc&#39;, &#39;health&#39;, &#39;absences&#39;]
+
+Target column: passed
+
+Feature values:
+  school sex  age address famsize Pstatus  Medu  Fedu     Mjob      Fjob  \
+0     GP   F   18       U     GT3       A     4     4  at_home   teacher   
+1     GP   F   17       U     GT3       T     1     1  at_home     other   
+2     GP   F   15       U     LE3       T     1     1  at_home     other   
+3     GP   F   15       U     GT3       T     4     2   health  services   
+4     GP   F   16       U     GT3       T     3     3    other     other   
+
+    ...    higher internet  romantic  famrel  freetime goout Dalc Walc health  \
+0   ...       yes       no        no       4         3     4    1    1      3   
+1   ...       yes      yes        no       5         3     3    1    1      3   
+2   ...       yes      yes        no       4         3     2    2    3      3   
+3   ...       yes      yes       yes       3         2     2    1    1      5   
+4   ...       yes       no        no       4         3     2    1    2      5   
+
+  absences  
+0        6  
+1        4  
+2       10  
+3        2  
+4        4  
+
+[5 rows x 30 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11933,7 +12006,7 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -11968,6 +12041,21 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processed feature columns (48 total features):
+[&#39;school_GP&#39;, &#39;school_MS&#39;, &#39;sex_F&#39;, &#39;sex_M&#39;, &#39;age&#39;, &#39;address_R&#39;, &#39;address_U&#39;, &#39;famsize_GT3&#39;, &#39;famsize_LE3&#39;, &#39;Pstatus_A&#39;, &#39;Pstatus_T&#39;, &#39;Medu&#39;, &#39;Fedu&#39;, &#39;Mjob_at_home&#39;, &#39;Mjob_health&#39;, &#39;Mjob_other&#39;, &#39;Mjob_services&#39;, &#39;Mjob_teacher&#39;, &#39;Fjob_at_home&#39;, &#39;Fjob_health&#39;, &#39;Fjob_other&#39;, &#39;Fjob_services&#39;, &#39;Fjob_teacher&#39;, &#39;reason_course&#39;, &#39;reason_home&#39;, &#39;reason_other&#39;, &#39;reason_reputation&#39;, &#39;guardian_father&#39;, &#39;guardian_mother&#39;, &#39;guardian_other&#39;, &#39;traveltime&#39;, &#39;studytime&#39;, &#39;failures&#39;, &#39;schoolsup&#39;, &#39;famsup&#39;, &#39;paid&#39;, &#39;activities&#39;, &#39;nursery&#39;, &#39;higher&#39;, &#39;internet&#39;, &#39;romantic&#39;, &#39;famrel&#39;, &#39;freetime&#39;, &#39;goout&#39;, &#39;Dalc&#39;, &#39;Walc&#39;, &#39;health&#39;, &#39;absences&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11989,7 +12077,7 @@ No (or) 0, for students who do not need early intervention.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -12003,6 +12091,21 @@ No (or) 0, for students who do not need early intervention.</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Training set has 300 samples.
+Testing set has 95 samples.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12160,7 +12263,7 @@ Di Pillo, G., Latorre, V., Lucidi, S. et al. 4OR-Q J Oper Res (2016) 14: 309. <a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12233,7 +12336,7 @@ Di Pillo, G., Latorre, V., Lucidi, S. et al. 4OR-Q J Oper Res (2016) 14: 309. <a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -12266,6 +12369,82 @@ Di Pillo, G., Latorre, V., Lucidi, S. et al. 4OR-Q J Oper Res (2016) 14: 309. <a
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+GaussianNB: 
+
+Training a GaussianNB using a training set size of 100. . .
+Trained model in 0.0009 seconds
+Made predictions in 0.0005 seconds.
+F1 score for training set: 0.7752.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.6457.
+Training a GaussianNB using a training set size of 200. . .
+Trained model in 0.0008 seconds
+Made predictions in 0.0004 seconds.
+F1 score for training set: 0.8060.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7218.
+Training a GaussianNB using a training set size of 300. . .
+Trained model in 0.0009 seconds
+Made predictions in 0.0004 seconds.
+F1 score for training set: 0.8134.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7761.
+
+LogisticRegression: 
+
+Training a LogisticRegression using a training set size of 100. . .
+Trained model in 0.0022 seconds
+Made predictions in 0.0004 seconds.
+F1 score for training set: 0.8671.
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.7068.
+Training a LogisticRegression using a training set size of 200. . .
+Trained model in 0.0019 seconds
+Made predictions in 0.0002 seconds.
+F1 score for training set: 0.8211.
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.7391.
+Training a LogisticRegression using a training set size of 300. . .
+Trained model in 0.0026 seconds
+Made predictions in 0.0002 seconds.
+F1 score for training set: 0.8512.
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.7500.
+
+SVC: 
+
+Training a SVC using a training set size of 100. . .
+Trained model in 0.0011 seconds
+Made predictions in 0.0008 seconds.
+F1 score for training set: 0.8354.
+Made predictions in 0.0007 seconds.
+F1 score for test set: 0.8025.
+Training a SVC using a training set size of 200. . .
+Trained model in 0.0034 seconds
+Made predictions in 0.0024 seconds.
+F1 score for training set: 0.8431.
+Made predictions in 0.0014 seconds.
+F1 score for test set: 0.8105.
+Training a SVC using a training set size of 300. . .
+Trained model in 0.0062 seconds
+Made predictions in 0.0045 seconds.
+F1 score for training set: 0.8664.
+Made predictions in 0.0015 seconds.
+F1 score for test set: 0.8052.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12472,7 +12651,7 @@ Moreover, if we would like to play it safe and ensure that we spot as many stude
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -12488,7 +12667,7 @@ Moreover, if we would like to play it safe and ensure that we spot as many stude
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create the parameters list you wish to tune</span>
@@ -12521,6 +12700,23 @@ Moreover, if we would like to play it safe and ensure that we spot as many stude
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Made predictions in 0.0003 seconds.
+Tuned model has a training F1 score of 0.8451.
+Made predictions in 0.0002 seconds.
+Tuned model has a testing F1 score of 0.7463.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
